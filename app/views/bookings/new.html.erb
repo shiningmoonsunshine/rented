@@ -1,0 +1,10 @@
+<h2>New booking</h2>
+
+<div class="container">
+  <h1>Create your new booking:</h1>
+  <%= simple_form_for @booking do |b| %>
+  <%= b.input :date, placeholder: "Choose a date" %>
+  <%= b.input :status, placeholder: "true or false" %>
+  <%= b.submit "Add", class: "btn btn-primary" %>
+  <% end %>
+</div>
