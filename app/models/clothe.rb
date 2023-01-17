@@ -1,5 +1,5 @@
 class Clothe < ApplicationRecord
   belongs_to :booking
   belongs_to :user
-  validates :category, :description, :price, :user, :booking, presence: true
+  validates :title, :category, :description, :price, presence: true
 end
