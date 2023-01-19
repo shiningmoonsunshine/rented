@@ -8,13 +8,15 @@
 
 puts "Cleaning Database 🗑️"
 Clothe.destroy_all
+User.destroy_all
 
 puts "Seeding clothes data 👚"
 
-clothe_one = Clothe.create(title: "Superb Dress", price: 30, category: "dress", description: "great")
-clothe_two = Clothe.create(title: "Superb Top", price: 50, category: "top", description: "awesome")
+user_one = User.create(password: "123456", email: "salut@gmail.com", first_name: "Sabrina", last_name: "Achab")
+user_two = User.create(password: "123456", email: "coucou@gmail.com", first_name: "Oriane", last_name: "Corral")
 
-clothe_one.save!
-clothe_two.save!
+
+clothe_one = Clothe.create!(title: "Superb Dress", price: 30, category: "dress", description: "great", user: user_one)
+clothe_two = Clothe.create!(title: "Superb Top", price: 50, category: "top", description: "awesome", user: user_one)
 
 puts clothe_one.title
