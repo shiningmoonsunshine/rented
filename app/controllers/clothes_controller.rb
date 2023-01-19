@@ -13,8 +13,9 @@ class ClothesController < ApplicationController
 
   def create
     @clothe = Clothe.new(clothe_params)
+    @clothe.user = current_user
     if @clothe.save
-      redirect_to clothe_path(@clothe)
+      redirect_to clothe_path(@clothe.id)
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,6 +24,6 @@ class ClothesController < ApplicationController
   private
 
   def clothe_params
-    params.require(:clothe).permit(:date, :status)
+    params.require(:clothe).permit(:title, :description, :category, :price)
   end
 end
