@@ -18,8 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_204240) do
     t.datetime "date"
     t.boolean "status"
     t.bigint "user_id", null: false
+    t.bigint "clothe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["clothe_id"], name: "index_bookings_on_clothe_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -28,12 +30,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_204240) do
     t.string "category"
     t.string "description"
     t.binary "picture"
-    t.bigint "booking_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.index ["booking_id"], name: "index_clothes_on_booking_id"
     t.index ["user_id"], name: "index_clothes_on_user_id"
   end
 
@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_204240) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "clothes"
   add_foreign_key "bookings", "users"
-  add_foreign_key "clothes", "bookings"
   add_foreign_key "clothes", "users"
 end
