@@ -1,11 +1,13 @@
 <div class="container">
-  <h1> <%= Clothe.find(params[:clothe_id]).title %> </h1>
+  <h1> <%= @clothe.title %> </h1>
   <%# commented line <h2> <strong> <%= Clothe.find(params[:clothe_id]).price € </strong> per day </h2> %>
-  <%= simple_form_for @booking do |b| %>
-  <p> FROM <%= b.datetime_local_field :date %> </p>
-  <p> TO <%= b.datetime_local_field :date %> </p>
+  <%= simple_form_for [@clothe, @booking] do |b| %>
+  <p> When ? <%= b.datetime_local_field :date %> </p>
+  <%#<p> TO <%= b.datetime_local_field :date </p> %>
+  <%= b.input :status, as: :select, collection: [['Yes',true], ['No',false]] %>
   <%= b.submit "Book", class: "btn btn-primary" %>
   <p>No amount will be debited at this time</p>
-  <p> <strong> Total <%= Clothe.find(params[:clothe_id]).price %> </strong> </p>
+  <p> <strong> Total <%= @clothe.price %> € </strong> </p>
   <% end %>
+  <%= link_to "Back", clothe_path(params[:clothe_id]), class: "btn btn-primary" %>
 </div>
