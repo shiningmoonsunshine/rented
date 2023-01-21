@@ -5,7 +5,7 @@
   <%= b.input :title, placeholder: "Choose a title for your piece of clothe" %>
   <%= b.input :description, placeholder: "Describe your piece of clothe" %>
   <%= b.label :category %>
-  <%= b.select :category,[['Dress','Dress'],['Tshirt','Tshirt'],['Pants','Pants']] %>
+  <%= b.select :category,[['Dress','Dress'],['Tshirt','Tshirt'],['Pants','Pants'],['Shirt','Shirt'], ['Shorts','Shorts'], ['Shoes','Shoes'], ['Jacket','Jacket'], ['Onesie','Onesie'], ['Parka','Parka'], ['Skirt','Skirt'],['Body','Body']] %>
   <%= b.number_field :price, placeholder: "Choose the price you want to rent at" %>
   <%= b.submit "Add", class: "btn btn-primary" %>
   <% end %>

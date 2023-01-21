@@ -1,13 +1,27 @@
-<div class="container">
-  <h1>Index Clothes</h1>
+<html>
+  <head>
+ <title>Rented - Change clothes as you walk</title>
+    <meta name="description" content="Rent & Lend your clothes">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <!-- Your content -->
+    <div class="container">
+  <h1><strong>Rented -</strong>Catalog</h1>
+  <div class="clothes">
   <% @clothes.each do |c| %>
-    <li class = card><%= c.title %></li>
-    <p>
+    <ul class = card><%= c.title %></ul>
+     <p>
       <%= link_to "Show this piece of clothe", clothe_path(c.id), class: "btn btn-primary" %>
     </p>
+  </div>
   <% end %>
-
   <p>
-      <%= link_to "Create a new piece of clothes", new_clothe_path, class: "btn btn-primary" %>
+      <%= link_to "Create a new piece of clothe", new_clothe_path, class: "btn btn-primary" %>
   </p>
 </div>
+    <!-- Your script tags here -->
+    <!-- <script src="first_file.js"></script> -->
+    <!-- <script src="other_file.js"></script> -->
+  </body>
+</html>
