@@ -3,7 +3,11 @@
   <% @clothes.each do |c| %>
     <li class = card><%= c.title %></li>
     <p>
-      <%= link_to "Show this clothe", clothe_path(c.id), class: "btn btn-primary" %>
+      <%= link_to "Show this piece of clothe", clothe_path(c.id), class: "btn btn-primary" %>
     </p>
   <% end %>
+
+  <p>
+      <%= link_to "Create a new piece of clothes", new_clothe_path, class: "btn btn-primary" %>
+  </p>
 </div>

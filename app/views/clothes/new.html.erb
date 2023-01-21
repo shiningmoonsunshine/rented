@@ -6,6 +6,10 @@
   <%= b.input :description, placeholder: "Describe your piece of clothe" %>
   <%= b.input :category, placeholder: "Choose the category of clothes" %>
   <%= b.number_field :price, placeholder: "Choose the price you want to rent at" %>
-  <%= b.submit "Add", class: "btn btn-primary"%>
+  <%= b.submit "Add", class: "btn btn-primary" %>
   <% end %>
+
+  <p>
+      <%= link_to "Show all clothes", clothes_path, class: "btn btn-primary" %>
+    </p>
 </div>
