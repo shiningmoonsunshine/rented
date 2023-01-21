@@ -1,14 +1,21 @@
 class BookingsController < ApplicationController
 <<<<<<< HEAD
+<<<<<<< HEAD
   def index
     @bookings = Booking.all
 =======
+=======
+>>>>>>> 7d3a6d1b45eec4c9efa775dd31f843c296f76144
 
   def show
     @booking = Booking.find(params[:id])
     @clothe_id = @booking.clothe.id
     @clothe = Clothe.find(@clothe_id)
+<<<<<<< HEAD
 >>>>>>> 7bc44fb895ed11a6e5e5a06d8a8bd8cfc90800eb
+=======
+
+>>>>>>> 7d3a6d1b45eec4c9efa775dd31f843c296f76144
   end
 
   def new
