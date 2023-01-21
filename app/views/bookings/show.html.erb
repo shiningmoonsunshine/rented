@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Your booking for <%= @clothe.title %> </h1>
+  <p> Lent by <%= @booking.user.first_name %> </p>
+  <div class="card">
+    <p> Date of booking : <%= @booking.date %> </p>
+    <p> Category : <%= @clothe.category %></p>
+    <p> Details : <%= @clothe.description %></p>
+  </div>
+</div>

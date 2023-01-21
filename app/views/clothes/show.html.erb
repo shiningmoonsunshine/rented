@@ -4,5 +4,13 @@
   <h3><%=@clothe.category %></h3>
   <h3><%=@clothe.description %></h3>
   <h3><%=@clothe.price%></h3>
+
+<p>
+  <%= link_to "Show all clothes", clothes_path(@clothe.id), class: "btn btn-primary" %>
+</p>
+
+<p>
+  <%= link_to "Book this piece of clothe", new_clothe_booking_url(@clothe.id), class: "btn btn-primary" %>
+</p>
 </div>
 </div>

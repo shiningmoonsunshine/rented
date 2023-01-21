@@ -4,8 +4,13 @@
   <%= simple_form_for @clothe do |b| %>
   <%= b.input :title, placeholder: "Choose a title for your piece of clothe" %>
   <%= b.input :description, placeholder: "Describe your piece of clothe" %>
-  <%= b.input :category, placeholder: "Choose the category of clothes" %>
+  <%= b.label :category %>
+  <%= b.select :category,[['Dress','Dress'],['Tshirt','Tshirt'],['Pants','Pants'],['Shirt','Shirt'], ['Shorts','Shorts'], ['Shoes','Shoes'], ['Jacket','Jacket'], ['Onesie','Onesie'], ['Parka','Parka'], ['Skirt','Skirt'],['Body','Body']] %>
   <%= b.number_field :price, placeholder: "Choose the price you want to rent at" %>
-  <%= b.submit "Add", class: "btn btn-primary"%>
+  <%= b.submit "Add", class: "btn btn-primary" %>
   <% end %>
+
+  <p>
+      <%= link_to "Show all clothes", clothes_path, class: "btn btn-primary" %>
+    </p>
 </div>

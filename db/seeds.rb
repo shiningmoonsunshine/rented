@@ -9,6 +9,7 @@
 puts "Cleaning Database 🗑️"
 Clothe.destroy_all
 User.destroy_all
+Booking.destroy_all
 
 puts "Seeding clothes data 👚"
 
@@ -19,4 +20,5 @@ user_two = User.create(password: "123456", email: "coucou@gmail.com", first_name
 clothe_one = Clothe.create!(title: "Superb Dress", price: 30, category: "dress", description: "great", user: user_one)
 clothe_two = Clothe.create!(title: "Superb Top", price: 50, category: "top", description: "awesome", user: user_one)
 
-puts clothe_one.title
+book_one = Booking.create!(date: Date.today, status: true, user: user_one, clothe: clothe_one)
+book_two = Booking.create!(date: Date.today, status: false, user: user_one, clothe: clothe_two)
