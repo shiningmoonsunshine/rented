@@ -8,10 +8,14 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @clothe = Clothe.find(params[:clothe_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @clothe = Clothe.find(params[:clothe_id])
+    @booking.user = current_user
+    @booking.clothe = @clothe
     if @booking.save
       redirect_to booking_path(@booking)
     else
