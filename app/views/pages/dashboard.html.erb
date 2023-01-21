@@ -1,27 +1,29 @@
-<h1>My Dashboard</h1>
-
 <div class="container">
-  <h1>Bookings</h1>
+  <h1>My Bookings</h1>
   <h2> Previous Bookings </h2>
   <div class="card">
-  <% @bookings.each do |b| %>
-    <% if b.status == false %>
-      <h3> <%= @clothe.title %> </h3>
-      <p> Category : <%= @clothe.category %></p>
-      <p> Date of booking : <%= b.date %> </p>
-    <% else %>
-      <p>None</p>
+    <% @bookings.each do |b| %>
+      <% if b.status == false %>
+        <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
+        <p> Category : <%= Clothe.find(b.clothe_id).category %></p>
+        <p> Date of booking : <%= b.date %> </p>
+        <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
+      <% elsif b.nil? == true %>
+        <p>None</p>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
   <h2> Current Bookings </h2>
   <div class="card">
-    <% if @booking.status == true %>
-      <h3> <%= @clothe.title %> </h3>
-      <p> Category : <%= @clothe.category %></p>
-      <p> Date of booking : <%= @booking.date %> </p>
-    <% else %>
-      <p>None</p>
+    <% @bookings.each do |b| %>
+      <% if b.status == true %>
+        <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
+        <p> Category : <%= Clothe.find(b.clothe_id).category %></p>
+        <p> Date of booking : <%= b.date %> </p>
+      <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
+      <% elsif b.nil? == true %>
+        <p>None</p>
+      <% end %>
     <% end %>
   </div>
 </div>
