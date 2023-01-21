@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @booking = Booking.find(params[:id])
+    @bookings = Booking.all
     @clothe_id = @booking.clothe_id
     @clothe = Clothe.find(@clothe_id)
   end

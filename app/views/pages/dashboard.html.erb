@@ -4,13 +4,15 @@
   <h1>Bookings</h1>
   <h2> Previous Bookings </h2>
   <div class="card">
-    <% if @booking.status == false %>
+  <% @bookings.each do |b| %>
+    <% if b.status == false %>
       <h3> <%= @clothe.title %> </h3>
       <p> Category : <%= @clothe.category %></p>
-      <p> Date of booking : <%= @booking.date %> </p>
+      <p> Date of booking : <%= b.date %> </p>
     <% else %>
       <p>None</p>
     <% end %>
+  <% end %>
   </div>
   <h2> Current Bookings </h2>
   <div class="card">
