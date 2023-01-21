@@ -7,19 +7,26 @@
   <body>
     <!-- Your content -->
     <div class="container">
-  <h1><strong>Rented -</strong>Catalog</h1>
-  <div class="clothes">
-  <% @clothes.each do |c| %>
-    <ul class = card><%= c.title %></ul>
-     <p>
-      <%= link_to "Show this piece of clothe", clothe_path(c.id), class: "btn btn-primary" %>
-    </p>
-  </div>
-  <% end %>
-  <p>
-      <%= link_to "Create a new piece of clothe", new_clothe_path, class: "btn btn-primary" %>
-  </p>
-</div>
+      <h1><strong>Rented -</strong>Catalog</h1>
+      <div class="clothes">
+        <ul>
+          <% @clothes.each do |c| %>
+          <li>
+            <div class="card">
+              <%= c.title %>
+              <p>
+                <%= link_to "Show this piece of clothe", clothe_path(c.id), class: "btn btn-primary" %>
+              </p>
+            </div>
+            </li>
+          <% end %>
+        </ul>
+
+        <p>
+            <%= link_to "Create a new piece of clothe", new_clothe_path, class: "btn btn-primary" %>
+        </p>
+      </div>
+    </div>
     <!-- Your script tags here -->
     <!-- <script src="first_file.js"></script> -->
     <!-- <script src="other_file.js"></script> -->
