@@ -4,7 +4,8 @@
   <%= simple_form_for @clothe do |b| %>
   <%= b.input :title, placeholder: "Choose a title for your piece of clothe" %>
   <%= b.input :description, placeholder: "Describe your piece of clothe" %>
-  <%= b.input :category, placeholder: "Choose the category of clothes" %>
+  <%= b.label :category %>
+  <%= b.select :category,[['Dress','Dress'],['Tshirt','Tshirt'],['Pants','Pants']] %>
   <%= b.number_field :price, placeholder: "Choose the price you want to rent at" %>
   <%= b.submit "Add", class: "btn btn-primary" %>
   <% end %>
