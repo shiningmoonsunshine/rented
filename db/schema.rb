@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_17_185841) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_17_204240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,9 +18,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_185841) do
     t.datetime "date"
     t.boolean "status"
     t.bigint "user_id", null: false
+    t.bigint "clothe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["clothe_id"], name: "index_bookings_on_clothe_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "clothes", force: :cascade do |t|
+    t.integer "price"
+    t.string "category"
+    t.string "description"
+    t.binary "picture"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["user_id"], name: "index_clothes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,5 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_185841) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "clothes"
   add_foreign_key "bookings", "users"
+  add_foreign_key "clothes", "users"
 end

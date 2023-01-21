@@ -1,10 +1,11 @@
-<h2>New booking</h2>
-
 <div class="container">
-  <h1>Create your new booking:</h1>
+  <h1> <%= Clothe.find(params[:clothe_id]).title %> </h1>
+  <%# commented line <h2> <strong> <%= Clothe.find(params[:clothe_id]).price € </strong> per day </h2> %>
   <%= simple_form_for @booking do |b| %>
-  <%= b.input :date, placeholder: "Choose a date" %>
-  <%= b.input :status, placeholder: "true or false" %>
-  <%= b.submit "Add", class: "btn btn-primary" %>
+  <p> FROM <%= b.datetime_local_field :date %> </p>
+  <p> TO <%= b.datetime_local_field :date %> </p>
+  <%= b.submit "Book", class: "btn btn-primary" %>
+  <p>No amount will be debited at this time</p>
+  <p> <strong> Total <%= Clothe.find(params[:clothe_id]).price %> </strong> </p>
   <% end %>
 </div>
