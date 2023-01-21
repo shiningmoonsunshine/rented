@@ -1,10 +1,9 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = Booking.all
-  end
 
   def show
     @booking = Booking.find(params[:id])
+    @clothe_id = @booking.clothe.id
+    @clothe = Clothe.find(@clothe_id)
   end
 
   def new

@@ -1,10 +1,23 @@
 <div class="container">
   <h1>Bookings</h1>
-  <%= if @booking.status == false %>
-   <h2> Previous Bookings </h2>
-    <%= @booking.date %>
-  <% else %>
-    <h2>Current Bookings</h2>
-    <%= @booking.date %>
-  <% end %>
+  <h2> Previous Bookings </h2>
+  <div class="card">
+    <% if @booking.status == false %>
+      <h3> <%= @clothe.title %> </h3>
+      <p> Category : <%= @clothe.category %></p>
+      <p> Date of booking : <%= @booking.date %> </p>
+    <% else %>
+      <p>None</p>
+    <% end %>
+  </div>
+  <h2> Current Bookings </h2>
+  <div class="card">
+    <% if @booking.status == true %>
+      <h3> <%= @clothe.title %> </h3>
+      <p> Category : <%= @clothe.category %></p>
+      <p> Date of booking : <%= @booking.date %> </p>
+    <% else %>
+      <p>None</p>
+    <% end %>
+  </div>
 </div>
