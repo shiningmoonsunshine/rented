@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Bookings</h1>
+  <%= if @booking.status == false %>
+   <h2> Previous Bookings </h2>
+    <%= @booking.date %>
+  <% else %>
+    <h2>Current Bookings</h2>
+    <%= @booking.date %>
+  <% end %>
+</div>
