@@ -151,8 +151,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.0-x86_64-linux)
       racc (~> 1.4)
-    nokogiri (1.14.0-x86_64-linux)
-      racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.5)
     public_suffix (5.0.1)
@@ -247,10 +245,7 @@ GEM
     zeitwerk (2.6.6)
 
 PLATFORMS
-<<<<<<< HEAD
-=======
   arm64-darwin-21
->>>>>>> cae3727dd681da678e8f21d7cad3fbe0171e9eee
   x86_64-linux
 
 DEPENDENCIES
@@ -280,8 +275,5 @@ RUBY VERSION
    ruby 3.1.2p20
 
 BUNDLED WITH
-<<<<<<< HEAD
    2.4.2
-=======
    2.4.3
->>>>>>> cae3727dd681da678e8f21d7cad3fbe0171e9eee
