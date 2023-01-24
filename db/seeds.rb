@@ -17,8 +17,8 @@ user_one = User.create(password: "123456", email: "salut@gmail.com", first_name:
 user_two = User.create(password: "123456", email: "coucou@gmail.com", first_name: "Oriane", last_name: "Corral")
 
 
-clothe_one = Clothe.create!(title: "Superb Dress", price: 30, category: "dress", description: "great", user: user_one)
-clothe_two = Clothe.create!(title: "Superb Top", price: 50, category: "top", description: "awesome", user: user_one)
+clothe_one = Clothe.create!(title: "Superb Dress", price: 30, category: "dress", description: "great", address: "7, Rue Sainte-Isaure", user: user_one)
+clothe_two = Clothe.create!(title: "Superb Top", price: 50, category: "top", description: "awesome", address: "21, Rue Daubenton", user: user_one)
 
-book_one = Booking.create!(date: Date.today, status: true, user: user_one, clothe: clothe_one)
-book_two = Booking.create!(date: Date.today, status: false, user: user_one, clothe: clothe_two)
+book_one = Booking.create!(start_date: Date.today, end_date: Date.tomorrow, status: true, user: user_one, clothe: clothe_one)
+book_two = Booking.create!(start_date: Date.today, end_date: Date.tomorrow, status: false, user: user_one, clothe: clothe_two)
