@@ -1,9 +1,11 @@
 <h1><b>All my clothes</b></h1>
 <div class="container">
   <h1><%= @clothe.title %></h1>
+  <%= cl_image_tag @clothe.photo.key,
+      width: 400, height: 300, crop: :fill %>
   <h3>Category: <%=@clothe.category %></h3>
   <h3>Description: <%=@clothe.description %></h3>
-  <h3>Avaible at: <%=@clothe.address %></h3>
+  <h3>Available at: <%=@clothe.address %></h3>
   <h3><%=@clothe.price%> €</h3>
 
 <p>
