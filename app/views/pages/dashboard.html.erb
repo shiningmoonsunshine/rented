@@ -6,7 +6,7 @@
       <% if b.status == false %>
         <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
         <p> Category : <%= Clothe.find(b.clothe_id).category %></p>
-        <p> Date of booking : <%= b.date %> </p>
+        <p> Booked from : <%= b.start_date %> To : <%= b.end_date %> </p>
         <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
       <% elsif b.nil? == true %>
         <p>None</p>
@@ -19,7 +19,7 @@
       <% if b.status == true %>
         <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
         <p> Category : <%= Clothe.find(b.clothe_id).category %></p>
-        <p> Date of booking : <%= b.date %> </p>
+        <p> Booked from : <%= b.start_date %> To : <%= b.end_date %> </p>
       <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
       <% elsif b.nil? == true %>
         <p>None</p>
