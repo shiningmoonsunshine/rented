@@ -1,1 +1,62 @@
 // Specific CSS for your home-page
+.body {
+  background-color: white;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  margin: 30px;
+}
+
+.left-column, .right-column {
+  flex-basis: 60%;
+}
+
+.left-column {
+  margin-left: 70px;
+}
+
+.right-column img {
+  width: 100%;
+}
+
+.left-column h1 {
+  font-size: 100px;
+}
+
+.left-column h3 {
+  font-size: 35px;
+}
+
+.left-column p {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+span {
+  color: #6863EF;
+}
+
+.sign-in-btn {
+  margin-top: 40px;
+}
+
+.sign-in-btn a {
+  text-decoration: none;
+  background-color: #6863EF;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sign-in-btn a:hover {
+  background-color: #df3c51;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 15px 20px rgba(191, 50, 68, 0.4);
+}
