@@ -2,8 +2,8 @@
   <h1> <%= @clothe.title %> </h1>
   <%# commented line <h2> <strong> <%= Clothe.find(params[:clothe_id]).price € </strong> per day </h2> %>
   <%= simple_form_for [@clothe, @booking] do |b| %>
-  <p> When ? <%= b.datetime_local_field :date %> </p>
-  <%#<p> TO <%= b.datetime_local_field :date </p> %>
+  <p> From <%= b.datetime_local_field :start_date %> </p>
+  <p> TO <%= b.datetime_local_field :end_date %> </p>
   <%= b.input :status, as: :select, collection: [['Yes',true], ['No',false]] %>
   <%= b.submit "Book", class: "btn btn-primary" %>
   <p>No amount will be debited at this time</p>
