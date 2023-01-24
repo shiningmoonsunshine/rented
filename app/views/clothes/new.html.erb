@@ -7,6 +7,7 @@
   <%= b.label :category %>
   <%= b.select :category,[['Dress','Dress'],['Tshirt','Tshirt'],['Pants','Pants'],['Shirt','Shirt'], ['Shorts','Shorts'], ['Shoes','Shoes'], ['Jacket','Jacket'], ['Onesie','Onesie'], ['Parka','Parka'], ['Skirt','Skirt'],['Body','Body']] %>
   <%= b.number_field :price, placeholder: "Choose the price you want to rent at" %>
+  <%= b.input :photo, as: :file %>
   <%= b.submit "Add", class: "btn btn-primary" %>
   <% end %>
 
