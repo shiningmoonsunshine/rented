@@ -1,6 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  border-bottom: solid 1px rgba(201, 201, 201, 0.822);
+  padding: 15px;
+  padding-right: 70px;
+  padding-left: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +17,106 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.search {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border: solid 1px rgba(201, 201, 201, 0.822);
+  border-radius: 60px;
+  transition: 0.5s;
+  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.384);
+  overflow: hidden;
+}
+
+.search.active {
+  width: 360px;
+}
+
+.search .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background: #6863EF;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+  color: white;
+}
+
+.search .input {
+  position: relative;
+  width: 300px;
+  height: 60px;
+  left: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search .input input {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.clear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-menu.dropdown-menu-end.show {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.384);
+  margin-top: 10px;
+}
+
+a.nav-link {
+  color: black;
+}
+
+li.nav-item.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  color: #6863EF;
+}
+
+/* .search .icon::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 3px solid white;
+  border-radius: 50%;
+  transform: translate(-4px,-4px);
+}
+
+.search .icon::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 12px;
+  background: white;
+  transform: translate(6px,6px) rotate(315deg);
+}
+ */
