@@ -5,6 +5,11 @@ require "rails/all"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+config.assets.paths << Rails.root.join('app', 'assets', 'hero-images')
+
+Dir.glob("#{Rails.root}/app/assets/images/**/").each do |path|
+  config.assets.paths << path
+end
 
 module Rented
   class Application < Rails::Application
