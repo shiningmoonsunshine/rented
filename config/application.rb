@@ -6,6 +6,11 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+Dir.glob("#{Rails.root}/app/assets/images/**/").each do |path|
+  config.assets.paths << path
+end
+
 module Rented
   class Application < Rails::Application
     config.generators do |generate|
@@ -13,9 +18,13 @@ module Rented
       generate.helper false
       generate.test_framework :test_unit, fixture: false
     end
+    config.assets.paths << Rails.root.join('app', 'assets', 'images')
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-
+    
+    Dir.glob("#{Rails.root}/app/assets/images/**/").each do |path|
+      config.assets.paths << path
+    end
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
