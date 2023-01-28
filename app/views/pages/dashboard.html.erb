@@ -1,28 +1,31 @@
 <div class="container">
   <h1>My Bookings</h1>
-  <h2> Previous Bookings </h2>
-  <div class="card">
-    <% @bookings.each do |b| %>
-      <% if b.status == false %>
-        <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
-        <p> Category : <%= Clothe.find(b.clothe_id).category %></p>
-        <p> Booked from : <%= b.start_date %> To : <%= b.end_date %> </p>
-        <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
-      <% elsif b.nil? == true %>
-        <p>None</p>
-      <% end %>
-    <% end %>
-  </div>
+  <div class="booking-card">
   <h2> Current Bookings </h2>
-  <div class="card">
     <% @bookings.each do |b| %>
-      <% if b.status == true %>
+      <% if b.status == true && b.user_id == current_user.id %>
         <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
         <p> Category : <%= Clothe.find(b.clothe_id).category %></p>
         <p> Booked from : <%= b.start_date %> To : <%= b.end_date %> </p>
       <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
-      <% elsif b.nil? == true %>
-        <p>None</p>
+      <% end %>
+    <% end %>
+      <% if booked_or_not() == true %>
+        <div class="no-booking-card">
+          <h3>No clothes booked... yet!</h3>
+          <p>It's time to refresh your wardrobe and get ready for your next fashion statement.</p>
+          <%= link_to "Start searching", clothes_path, class: "btn-clothes-index" %>
+        </div>
+      <% end %>
+  </div>
+  <div class="booking-card">
+    <h2> Previous Bookings </h2>
+    <% @bookings.each do |b| %>
+      <% if b.status == false && b.user_id == current_user %>
+        <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
+        <p> Category : <%= Clothe.find(b.clothe_id).category %></p>
+        <p> Booked from : <%= b.start_date %> To : <%= b.end_date %> </p>
+        <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
       <% end %>
     <% end %>
   </div>
