@@ -17,4 +17,12 @@
    <%= render "shared/flashes" %>
     <%= yield %>
   </body>
+  <script>
+    const icaune = document.querySelector('.icaune');
+    const search = document.querySelector('.search');
+    console.log('hello')
+    icaune.onclick = function () {
+      search.classList.toggle('active')
+    }
+  </script>
 </html>
