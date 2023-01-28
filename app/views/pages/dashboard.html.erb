@@ -4,10 +4,10 @@
   <h2> Current Bookings </h2>
     <% @bookings.each do |b| %>
       <% if b.status == true && b.user_id == current_user.id %>
-        <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
-        <p> Category : <%= Clothe.find(b.clothe_id).category %></p>
-        <p> Booked from : <%= b.start_date %> To : <%= b.end_date %> </p>
-      <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
+          <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
+          <p> Category : <%= Clothe.find(b.clothe_id).category %></p>
+          <p> Booked from : <%= b.start_date %> To : <%= b.end_date %> </p>
+        <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
       <% end %>
     <% end %>
       <% if @bookings.length == 0 %>
