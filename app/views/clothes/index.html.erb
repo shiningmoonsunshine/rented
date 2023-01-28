@@ -12,13 +12,19 @@
         <ul>
           <% @clothes.each do |c| %>
           <li>
-            <div class="card">
+            <div class="card-product" style="background-image: #F3C3BC" %>
               <%= c.title %>
+              <%= cl_image_tag c.photo.key,  width: 400, height: 300, crop: :fill%>
+              <div class="card-product-infos">
+              <%= c.description %>
+              <p> <strong> <%= c.price %> € </strong> </p>
+            </div>
               <p>
                 <%= link_to "Show this piece of clothe", clothe_path(c.id), class: "btn btn-primary" %>
+                <%= link_to "Delete", clothe_path(c.id), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
               </p>
-            </div>
-            </li>
+      </div>
+          </li>
           <% end %>
         </ul>
 
@@ -27,6 +33,7 @@
         </p>
       </div>
     </div>
+
     <!-- Your script tags here -->
     <!-- <script src="first_file.js"></script> -->
     <!-- <script src="other_file.js"></script> -->
