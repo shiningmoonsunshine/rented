@@ -9,7 +9,7 @@
     </button>
 
     <div class="search">
-      <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="icaune"><i class="fa-solid fa-magnifying-glass"></i></div>
       <div class="input">
         <input type="text" placeholder="Search" id="mysearch">
         <span class="clear" onclick="document.getElementById('mysearch').value = ''"><i class="fa-solid fa-xmark"></i></span>
@@ -40,11 +40,12 @@
       </ul>
     </div>
   </div>
-  <script>
+<%#   <script>
     const icon = document.querySelector('.icon');
     const search = document.querySelector('.search');
+    console.log('hello')
     icon.onclick = function () {
       search.classList.toggle('active')
     }
-  </script>
+  </script> %>
 </div>

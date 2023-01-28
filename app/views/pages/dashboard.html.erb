@@ -10,7 +10,7 @@
       <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
       <% end %>
     <% end %>
-      <% if booked_or_not() == true %>
+      <% if @bookings.length == 0 %>
         <div class="no-booking-card">
           <h3>No clothes booked... yet!</h3>
           <p>It's time to refresh your wardrobe and get ready for your next fashion statement.</p>
