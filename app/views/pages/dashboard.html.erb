@@ -1,25 +1,30 @@
 <div class="container">
   <h1>My Bookings</h1>
-  <div class="booking-card">
   <h2> Current Bookings </h2>
-    <% @bookings.each do |b| %>
-      <% if b.status == true && b.user_id == current_user.id %>
-        <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
-        <p> Category : <%= Clothe.find(b.clothe_id).category %></p>
-        <p> Booked from : <%= b.start_date %> To : <%= b.end_date %> </p>
-      <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
-      <% end %>
-    <% end %>
-      <% if @bookings.length == 0 %>
-        <div class="no-booking-card">
-          <h3>No clothes booked... yet!</h3>
-          <p>It's time to refresh your wardrobe and get ready for your next fashion statement.</p>
-          <%= link_to "Start searching", clothes_path, class: "btn-clothes-index" %>
+  <% @bookings.each do |b| %>
+    <% if b.status == true && b.user_id == current_user.id %>
+      <div class="booking-card">
+        <div class="booking-image">
+          <%= cl_image_tag Clothe.find(b.clothe_id).photo.key,  width: 400, height: 300, crop: :fill%>
         </div>
-      <% end %>
-  </div>
+        <div class="booking-info">
+          <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
+          <p> Category : <%= Clothe.find(b.clothe_id).category %></p>
+          <p> Booked from : <%= b.start_date %> To : <%= b.end_date %> </p>
+        </div>
+          <%# <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  <% end %>
+  <% if @bookings.length == 0 %>
+    <div class="no-booking-card">
+      <h3>No clothes booked... yet!</h3>
+      <p>It's time to refresh your wardrobe and get ready for your next fashion statement.</p>
+      <%= link_to "Start searching", clothes_path, class: "btn-clothes-index" %>
+      </div>
+  <% end %>
+  <h2> Previous Bookings </h2>
   <div class="booking-card">
-    <h2> Previous Bookings </h2>
     <% @bookings.each do |b| %>
       <% if b.status == false && b.user_id == current_user %>
         <h3> <%= Clothe.find(b.clothe_id).title %> </h3>
@@ -28,5 +33,5 @@
         <%= link_to "View more", booking_path(b.id), class: "btn btn-primary" %>
       <% end %>
     <% end %>
-  </div>
+    </div>
 </div>

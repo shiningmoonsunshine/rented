@@ -26,7 +26,7 @@
                   flatpickr_target: 'endDateInput'
                 }
               } %>
-   <%= f.input :status, as: :select, collection: [['Yes',true], ['No',false]] %>
+   <%= f.input :status, as: :select, collection: [['Booked',true], ['Completed',false]] %>
   <%= f.submit "Book", class: "btn btn-primary" %>
   <p>No amount will be debited at this time</p>
   <p> <strong> Total <%= @clothe.price %> € </strong> </p>

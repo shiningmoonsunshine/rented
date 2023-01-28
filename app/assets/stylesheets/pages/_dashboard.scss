@@ -32,3 +32,20 @@
   box-shadow: 0px 0px 20px rgba(191, 50, 68, 0.4);
   color: white;
 }
+
+.booking-card {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 30px;
+}
+
+.booking-image img {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  max-width:80%;
+  height:auto;
+}
