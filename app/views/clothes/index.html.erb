@@ -14,8 +14,12 @@
           <li>
             <div class="card">
               <%= c.title %>
+              <%= c.description %>
+              <p> <strong> <%= c.price %> € </strong> </p>
+              <%= c.photo.key %>
               <p>
                 <%= link_to "Show this piece of clothe", clothe_path(c.id), class: "btn btn-primary" %>
+                <%= link_to "Delete", clothe_path(c.id), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
               </p>
             </div>
             </li>

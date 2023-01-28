@@ -21,6 +21,12 @@ class ClothesController < ApplicationController
     end
   end
 
+  def destroy
+    @clothe = Restaurant.find(params[:id])
+    @restaurant.destroy
+    redirect_to clothes_path, status: :see_other
+  end
+
   private
 
   def clothe_params
