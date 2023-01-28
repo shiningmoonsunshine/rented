@@ -1,6 +1,10 @@
 <div class="container">
   <h1> <%= @clothe.title %> </h1>
   <%# commented line <h2> <strong> <%= Clothe.find(params[:clothe_id]).price € </strong> per day </h2> %>
+  <div class="booking-image">
+  <%= cl_image_tag @clothe.photo.key,
+      width: 400, height: 300, crop: :fill %>
+  </div>
 <%= simple_form_for [@clothe, @booking],
                     html: {
                       data: {

@@ -1,22 +1,16 @@
+.container {
+  width: 90%;
+  margin: auto;
+  padding-top: 2.5%;
+}
+
 .card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-}
-
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230,230,230);
 }
 
 .card-product p {
@@ -31,10 +25,43 @@
   padding: 16px;
 }
 
-.card-product .card-product-infos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+.card-product-infos {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.card-product img {
+  width: 100%;
+  overflow: clip;
+}
+
+.clothes {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+
+.clothes .btn-primary {
+  display: inline-block;
+  background-color: #6863EF;
+  padding: 16px 36px;
+  border-radius: 50px;
+  color: white;
+}
+
+a.btn-clothes {
+  display: flex;
+  background-color: #6863EF;
+  padding: 10px;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
 }
 
 // Smallest device
